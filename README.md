@@ -1,7 +1,12 @@
-Design patterns
----
+# Design patterns
 Design Pattern creazionali: **Singleton**.
-<br/>
+
 Design Pattern strutturali: **Adapter**, **Decorator**, **Proxy**.
-<br/>
+
 Design Pattern comportamentali: **Chain of Responsibility**.
+
+# Partecipanti
+* Umberto Loria
+* Rosario Gagliardi
+* Mario Egidio
+* Vincenzo Pagliaro
