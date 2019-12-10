@@ -82,7 +82,7 @@ class LaureaT_Student(Observed):
 	def add_grade(self, exam, grade):
 		if self.grades.get(exam.name) == None:
 			self.grades[exam.name] = grade
-			self.total_cfu += grade
+			self.total_cfu += exam.cfu
 			self.observsers_notify()
 
 
@@ -92,12 +92,8 @@ class HistoryView:
 		self.data = []
 
 	def update(self, student):
-		if student is None:
-			return
-		if student.english_r != None:
-			self.data.append((copy.copy(student.grades), student.english_r, time.time()))
-		else:
-			self.data.append((copy.copy(student.grades), time.time()))
+		if student is not None:
+			self.data.append((copy.copy(student.grades), bool(student.english_r), time.time()))
 
 
 class LiveView:
@@ -109,7 +105,7 @@ class LiveView:
 		if self.__oldstate == None:
 			pass
 		elif self.__oldstate.english_r != student.english_r:
-			print("Cambio stato-. lo studentie ha appena superato la prova di inglese\n")
+			print("Cambio stato-. lo studente ha appena superato la prova di inglese\n")
 		elif self.__oldstate.grades != student.grades:
 			print("cambio stato: lo studente ha superato un nuovo esame")
 			print("cambio stato: il numero di CFU è: ", student.total_cfu, "\n")
