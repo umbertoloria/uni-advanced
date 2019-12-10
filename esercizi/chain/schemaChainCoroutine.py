@@ -1,53 +1,61 @@
 import functools
 
+
 def coroutine(function):
-    @functools.wraps(function)
-    def wrapper(*args, **kwargs):
-        generator = function(*args, **kwargs)
-        next(generator)
-        return generator
-    return wrapper
+	@functools.wraps(function)
+	def wrapper(*args, **kwargs):
+		generator = function(*args, **kwargs)
+		next(generator)
+		return generator
+
+	return wrapper
+
 
 @coroutine
 def ConcreteHandlerOne(successor=None):
-    while True:
-        request = (yield)
-        if 0 < request <= 10:
-            print("This is {} handling request '{}'".format("ConcreteHandlerOne", request))
-        elif successor is not None:
-            successor.send(request)
+	while True:
+		request = (yield)
+		if 0 < request <= 10:
+			print("This is {} handling request '{}'".format("ConcreteHandlerOne", request))
+		elif successor is not None:
+			successor.send(request)
+
 
 @coroutine
 def ConcreteHandlerTwo(successor=None):
-    while True:
-        request = (yield)
-        if 10 < request <= 20:
-            print("This is {} handling request '{}'".format("ConcreteHandlerTwo", request))
-        elif successor is not None:
-            successor.send(request)
+	while True:
+		request = (yield)
+		if 10 < request <= 20:
+			print("This is {} handling request '{}'".format("ConcreteHandlerTwo", request))
+		elif successor is not None:
+			successor.send(request)
+
 
 @coroutine
 def ConcreteHandlerThree(successor=None):
-    while True:
-        request = (yield)
-        if 20 < request <= 30:
-            print("This is {} handling request '{}'".format("ConcreteHandlerThree", request))
-        elif successor is not None:
-            successor.send(request)
+	while True:
+		request = (yield)
+		if 20 < request <= 30:
+			print("This is {} handling request '{}'".format("ConcreteHandlerThree", request))
+		elif successor is not None:
+			successor.send(request)
+
 
 @coroutine
 def DefaultHandler(successor=None):
-    while True:
-        request = (yield)
-        print("This is {} telling you that request '{}' has no handler right now".format("DefaultHandler",request))
+	while True:
+		request = (yield)
+		print("This is {} telling you that request '{}' has no handler right now".format("DefaultHandler", request))
+
 
 class Client:
-    def __init__(self):
-        self.handle=ConcreteHandlerOne(ConcreteHandlerTwo(ConcreteHandlerThree(DefaultHandler(None))))
+	def __init__(self):
+		self.handle = ConcreteHandlerOne(ConcreteHandlerTwo(ConcreteHandlerThree(DefaultHandler(None))))
 
-    def delegate(self,requests):
-        for request in requests:
-            self.handle.send(request)
+	def delegate(self, requests):
+		for request in requests:
+			self.handle.send(request)
+
 
 # Create a client object
 clientOne = Client()
