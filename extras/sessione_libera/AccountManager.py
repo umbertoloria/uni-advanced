@@ -1,4 +1,4 @@
-from libs.logger import logger
+from extras.libs.logger import logger
 
 
 class Account:
