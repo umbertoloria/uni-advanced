@@ -13,6 +13,9 @@ class MyClass:
 m = MyClass("a", "b", "c")
 print(m)
 
+print()
+print()
+
 print("******Provo Singleton*******")
 
 
