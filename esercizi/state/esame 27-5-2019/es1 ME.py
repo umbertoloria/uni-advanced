@@ -17,13 +17,13 @@ class Pacco:
     def statoPacco(self, newState):
         if newState == Pacco.ORDINATO:
             self.next = self._next
-            self.pred = lambda *args: print("Lo stato del pacco non può tornare indietro perchè è nello stato ",stati[self.statoPacco])
+            self.pred = lambda *args: print("Lo stato del esame 27-5-2019 non può tornare indietro perchè è nello stato ",stati[self.statoPacco])
         if newState == Pacco.SPEDITO:
             self.next = self._next
             self.pred = self._pred
         if newState == Pacco.RICEVUTO:
             self.pred = self._pred
-            self.next = lambda *args: print("Lo stato del pacco non può andare avanti perchè è nello stato ",stati[self.statoPacco])
+            self.next = lambda *args: print("Lo stato del esame 27-5-2019 non può andare avanti perchè è nello stato ",stati[self.statoPacco])
 
 
     def _pred(self):
@@ -32,16 +32,16 @@ class Pacco:
         self.statoPacco=self.statoPacco+1
 
     def stampaStato(self):
-        print("Il pacco è " + stati[self.statoPacco])
+        print("Il esame 27-5-2019 è " + stati[self.statoPacco])
 
 def main():
-	print("\nCreo il pacco")
+	print("\nCreo il esame 27-5-2019")
 	pacco=Pacco()
 	pacco.stampaStato()
-	print("\nInoltro il pacco all'ufficio postale")
+	print("\nInoltro il esame 27-5-2019 all'ufficio postale")
 	pacco.next()
 	pacco.stampaStato()
-	print("\nConsegno il pacco al destinatario")
+	print("\nConsegno il esame 27-5-2019 al destinatario")
 	pacco.next()
 	pacco.stampaStato()
 	print("\nProvo a passare ad uno stato successivo")
@@ -53,16 +53,16 @@ if __name__== "__main__":
 
 
 """Il  programma deve stampare:
-Creo il pacco
-Il pacco e` stato ordinato ma non ancora spedito
+Creo il esame 27-5-2019
+Il esame 27-5-2019 e` stato ordinato ma non ancora spedito
 
-Inoltro il pacco all'ufficio postale
-Il pacco e` stato spedito ma non ancora ricevuto
+Inoltro il esame 27-5-2019 all'ufficio postale
+Il esame 27-5-2019 e` stato spedito ma non ancora ricevuto
 
-Consegno il pacco al destinatario
-Il pacco e` stato ricevuto 
+Consegno il esame 27-5-2019 al destinatario
+Il esame 27-5-2019 e` stato ricevuto 
 
 Provo a passare ad uno stato successivo
-Il pacco e` gia` stato ricevuto
-Il pacco e` stato ricevuto 
+Il esame 27-5-2019 e` gia` stato ricevuto
+Il esame 27-5-2019 e` stato ricevuto 
 """

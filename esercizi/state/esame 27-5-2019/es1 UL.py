@@ -1,4 +1,4 @@
-#  Un pacco può essere ordinato, spedito, e ricevuto.
+#  Un esame 27-5-2019 può essere ordinato, spedito, e ricevuto.
 #  Vogliamo scrivere il suo stato ogni volta che questo cambia.
 #  Quello è iniziale è ordinato.
 #  Pacco ha succ e prev
