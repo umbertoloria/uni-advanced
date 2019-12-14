@@ -88,11 +88,10 @@ class Archive:
 		self._unpack = extractall
 
 
-# Il WITH AS fino ad ora lo abbiao usato con delle classe che nascono come dei Context-Manager:
-# Come per esempio scriviamo with open(...) as var che rappresenta il file objcet del file che abbiamo aperto
-# quella è una cosa che è suportata naturalmente da Python
-# Ora vediamo come scrivere dei Context-Manager, quindi rendere degli oggetti che non sono naturalmente
-# utilizzat nello statement WITH AS e renderli in effetti Context-Manager.
+# Il WITH AS fino ad ora lo abbiamo usato con delle classe che nascono come dei Context-Manager: Come per esempio
+# scriviamo with open(...) as var che rappresenta il file object del file che abbiamo aperto. Quella è una cosa che è
+# supportata naturalmente da Python. Ora vediamo come scrivere dei Context-Manager, quindi rendere degli oggetti che non
+# sono naturalmente utilizzati nello statement WITH AS e renderli in effetti Context-Manager.
 with Archive("ciao.zip") as archive:
 	print(archive.names())
 	archive.unpack()
