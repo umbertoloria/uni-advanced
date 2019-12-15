@@ -1,11 +1,3 @@
-#  Un esame 27-5-2019 può essere ordinato, spedito, e ricevuto.
-#  Vogliamo scrivere il suo stato ogni volta che questo cambia.
-#  Quello è iniziale è ordinato.
-#  Pacco ha succ e prev
-#  Lo stato ordinati non è preceduto, e il ricevuto non è seguito.
-#  L'approccio più semplice sarebbe fare degli if-else. Usiamo però l'approccio state-specific
-
-
 class Pacco:
 	STATI = ("ordinato", "spedito", "ricevuto")
 	ORDINATO = 0

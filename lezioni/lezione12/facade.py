@@ -19,7 +19,7 @@ class Archive:
 			self._file.close()
 		self._names = self._unpack = self._file = None
 
-	# per far diventare un context-manager questo archivio, basta mettere __enter__ e __exit__
+	# per far diventare un Context Manager questo archivio, basta mettere __enter__ e __exit__
 	def __enter__(self):
 		return self
 
@@ -88,10 +88,10 @@ class Archive:
 		self._unpack = extractall
 
 
-# Il WITH AS fino ad ora lo abbiamo usato con delle classe che nascono come dei Context-Manager: Come per esempio
+# Il WITH AS fino ad ora lo abbiamo usato con delle classe che nascono come dei Context Manager: Come per esempio
 # scriviamo with open(...) as var che rappresenta il file object del file che abbiamo aperto. Quella è una cosa che è
-# supportata naturalmente da Python. Ora vediamo come scrivere dei Context-Manager, quindi rendere degli oggetti che non
-# sono naturalmente utilizzati nello statement WITH AS e renderli in effetti Context-Manager.
+# supportata naturalmente da Python. Ora vediamo come scrivere dei Context Manager, quindi rendere degli oggetti che non
+# sono naturalmente utilizzati nello statement WITH AS e renderli in effetti Context Manager.
 with Archive("ciao.zip") as archive:
 	print(archive.names())
 	archive.unpack()

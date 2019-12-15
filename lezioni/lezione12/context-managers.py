@@ -23,7 +23,7 @@ class File:
 		return self.file_obj
 
 	def __exit__(self, exc_type, exc_val, exc_tb):
-		# return True: un'eventuale eccezione viene gestita grazionsamente, altrimenti viene rilanciata da WITH AS
+		# return True: un'eventuale eccezione viene gestita graziosamente, altrimenti viene rilanciata da WITH AS
 		self.file_obj.close()
 
 
