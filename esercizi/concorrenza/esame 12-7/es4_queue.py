@@ -23,13 +23,12 @@ def add_jobs(str, files, jobs):
 		jobs.put((i, strsRead))
 
 
-def worker(jobs,str, files):
+def worker(jobs, str, files):
 	while True:
-		i,strRead = jobs.get()
-		count=strRead.count(str)
+		i, strRead = jobs.get()
+		count = strRead.count(str)
 		print("La parola {} è stata trovata nel file {} {} volte".format(str, files[i], count))
 		jobs.task_done()
-
 
 
 def main():

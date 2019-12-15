@@ -1,9 +1,9 @@
 # Design patterns
 Design Pattern creazionali: **Singleton**.
 
-Design Pattern strutturali: **Adapter**, **Decorator**, **Proxy**.
+Design Pattern strutturali: **Adapter**, **Decorator**, **Proxy**, **Façade**.
 
-Design Pattern comportamentali: **Chain of Responsibility**.
+Design Pattern comportamentali: **Chain of Responsibility**, **State**, **Observer**.
 
 # Partecipanti
 * Umberto Loria
